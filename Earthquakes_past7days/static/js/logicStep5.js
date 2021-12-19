@@ -98,9 +98,9 @@ style: styleInfo,
 }).addTo(earthquakes);
   earthquakes.addTo(map);
 });
-var legend = L.control({position: 'bottomright'});
-
-// Then add all the details for the legend.
+var legend= L.control({
+  position: "bottomright"
+});
 legend.onAdd = function() {
   let div = L.DomUtil.create("div", "info legend");
   const magnitudes = [0, 1, 2, 3, 4, 5];
@@ -119,12 +119,9 @@ legend.onAdd = function() {
     div.innerHTML +=
       "<i style='background: " + colors[i] + "'></i> " +
       magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
-    }
+  }
     return div;
   };
-
-// Finally, we add our legend to the map.
 legend.addTo(map);
-};
 
-legend.addTo(map);
+
